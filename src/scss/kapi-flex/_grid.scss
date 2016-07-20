@@ -1,0 +1,118 @@
+
+
+.grid {
+    display: flex;
+    flex-flow: wrap row;
+    align-items: stretch;
+    margin: 0 (-$marginGap/2);
+    justify-content: flex-start;
+
+    width: 100%;
+
+    .grid {
+        width: calc(100% + #{$marginGap});
+    }
+
+    &__cell {
+        margin: 0 ($marginGap/2) $marginGap ($marginGap/2);
+
+        @media (max-width: 768px) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    &__spacer {
+        flex-grow: 1;
+    }
+
+    &--reverse {
+        flex-direction: row-reverse;
+
+        &.grid--column {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &--center {
+        justify-content: center;
+    }
+
+    &--right {
+        justify-content: flex-end;
+    }
+
+    &--column {
+        flex-direction: column;
+        flex-flow: column wrap;
+    }
+
+    &--start {
+        align-items: flex-start;
+    }
+
+    @each $gap in $column_gap {
+        $gappx: #{$gap}px;
+        $gappx_double: #{$gap * 1.5}px;
+        $gappx_half: #{$gap / 2}px;
+
+        &--#{$gap;} {
+            margin: 0 -$gappx_half;
+
+            .grid {
+                width: calc(100% + #{$gappx});
+                margin: 0 -$gappx_half;
+            }
+
+            justify-content: space-between;
+            
+            .grid__cell {
+                margin: 0 $gappx_half #{$gappx} $gappx_half;
+            }
+
+            @each $name, $bp_size in $breakpoints_names {
+                @media (min-width:  $bp_size) {
+                    @each $number in $columns_numbers {
+                        $calculatedWidth: percentage($number/12);
+
+                        @if $number == 12 {
+                            .col-#{$name}-12 {
+                                max-width: 100%;
+                                flex-basis: 100%;
+                                width: 100%;
+                            }
+                        } @else {
+                            .col-#{$name}-#{$number} {
+                                max-width: calc( #{$calculatedWidth} - #{$gappx});
+                                flex-basis: calc( #{$calculatedWidth} - #{$gappx});
+                                width: calc( #{$calculatedWidth} - #{$gappx});
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@each $name, $bp_size in $breakpoints_names {
+    @media (min-width:  $bp_size) {
+        @each $number in $columns_numbers {
+            $calculatedWidth: percentage($number/12);
+
+            @if ($number == 12) {
+                .col-#{$name}-12 {
+                    max-width: 100%;
+                    flex-basis: 100%;
+                    width: 100%;
+                }
+            } @else {
+                .col-#{$name}-#{$number} {
+                    max-width: calc( #{$calculatedWidth} - #{$marginGap});
+                    flex-basis: calc( #{$calculatedWidth} - #{$marginGap});
+                    width: calc( #{$calculatedWidth} - #{$marginGap});
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+
+.order {
+
+    @each $name, $bp_size in $breakpoints_names {
+        @media (min-width:  $bp_size) {
+            @each $order in $order_numbers {
+                &-#{$name}-#{$order} {
+                    order: $order;
+                }
+            }
+        }
+    }
+
+}
