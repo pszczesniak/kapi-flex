@@ -2792,12 +2792,3 @@
 
 }
 
-@media (max-width: 768px) {
-
-.grid__cell {
-	margin-left: 0;
-	margin-right: 0;
-}
-
-}
-

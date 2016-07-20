@@ -15,11 +15,6 @@
 
     &__cell {
         margin: 0 ($marginGap/2) $marginGap ($marginGap/2);
-
-        @media (max-width: 768px) {
-            margin-left: 0;
-            margin-right: 0;
-        }
     }
 
     &__spacer {
@@ -65,7 +60,7 @@
             }
 
             justify-content: space-between;
-            
+
             .grid__cell {
                 margin: 0 $gappx_half #{$gappx} $gappx_half;
             }
