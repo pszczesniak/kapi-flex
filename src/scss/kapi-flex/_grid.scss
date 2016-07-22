@@ -1,4 +1,9 @@
 
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 
 .grid {
     display: flex;
@@ -6,12 +11,17 @@
     align-items: stretch;
     margin: 0 (-$marginGap/2);
     justify-content: flex-start;
+    width: calc(100% + #{$marginGap});
 
-    width: 100%;
-
-    .grid {
-        width: calc(100% + #{$marginGap});
+    &--side-gaps {
+        width: calc(100% - #{$marginGap} );
+        margin: 0 auto;
     }
+
+
+    /*.grid {
+        width: calc(100% + #{$marginGap});
+    }*/
 
     &__cell {
         margin: 0 ($marginGap/2) $marginGap ($marginGap/2);
@@ -40,6 +50,10 @@
     &--column {
         flex-direction: column;
         flex-flow: column wrap;
+
+        &.grid--center {
+            align-items: center;
+        }
     }
 
     &--start {
@@ -53,6 +67,12 @@
 
         &--#{$gap;} {
             margin: 0 -$gappx_half;
+            width: calc(100% + #{$gappx});
+
+            &.grid--side-gaps {
+                width: calc(100% - #{$gappx});
+                margin: 0 auto;
+            }
 
             .grid {
                 width: calc(100% + #{$gappx});
