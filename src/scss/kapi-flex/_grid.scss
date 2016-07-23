@@ -47,15 +47,6 @@ body {
         justify-content: flex-end;
     }
 
-    &--column {
-        flex-direction: column;
-        flex-flow: column wrap;
-
-        &.grid--center {
-            align-items: center;
-        }
-    }
-
     &--start {
         align-items: flex-start;
     }
@@ -129,5 +120,24 @@ body {
                 }
             }
         }
+
+        .col-#{$name} {
+            flex-basis: 0;
+            flex-grow: 1;
+            max-width: 100%;
+        }
+
+        .grid--#{$name}-top {
+            align-items: flex-start;
+        }
+
+        .grid--#{$name}-middle {
+            align-items: center;
+        }
+
+        .grid--#{$name}-bottom {
+            align-items: flex-end;
+        }
+
     }
 }
