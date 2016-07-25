@@ -1,1 +1,740 @@
-Hello world
+<!doctype html>
+<html dir="ltr" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8">
+    <title>KaPi-Flex by Piotr Szczęśniak</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="KaPi-Flex - Complete css grid system based on flex.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" sizes="192x192" href="img/touch/chrome-touch-icon-192x192.png">
+    <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-precomposed.png">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="green">
+    <meta name="apple-mobile-web-app-title" content="KaPi-Flex by Piotr Szczęśniak">
+    <meta name="msapplication-TileImage" content="img/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#078490">
+
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="KaPi-Flex by Piotr Szczęśniak">
+    <meta property="og:description" content="KaPi-Flex - Complete css grid system based on flex.">
+    <meta property="og:url" content="https://pszczesniak.github.io/kapi-flex/">
+    <meta property="og:site_name" content="KaPi-Flex by Piotr Szczęśniak">
+    <meta property="og:image" content="img/og.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Jomhuria|Titillium+Web:300,400,600,700" rel="stylesheet">
+
+    <style>
+        .nested-colors [class*="col-"] {
+            padding: 0.25em;
+            font-size: 0.75em;
+            background-color: rgba(255, 165, 0, 0.5);
+            border: 1px solid #444;
+        }
+
+        .table {width: 100%;}
+        .table thead {border-bottom: 1px solid #eee;}
+        td, th {
+            padding: 0.5em;
+            text-align: center;
+        }
+
+        section a:not([class]) {
+            color: red;
+            text-decoration: underline;
+        }
+
+        @media all and (max-width: 1024px) {
+            .grid > [class*="col-"] {
+                padding: 0 !important;
+                font-size: 0.75em;
+            }
+
+            code {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+
+    
+</head>
+<body>
+    <nav class="l-navbar">
+        <ul class="l-navbar__menu">
+            <!--<li>
+                <a href="/about-me" class="l-navbar__menu-item" title="About me">About me</a>
+            </li>-->
+            <li>
+                <a href="https://github.com/pszczesniak/kapi-flex" class="l-navbar__menu-item" title="KaPi-Flex">KaPi-Flex</a>
+            </li>
+            <li>
+                <a href="https://github.com/pszczesniak/svg-to-base64-vanilla-js" class="l-navbar__menu-item" title="SVG to base64 converter">SVG to base64</a>
+            </li>
+            <li>
+                <a href="https://github.com/pszczesniak/login-validation" class="l-navbar__menu-item" title="Login validation">Login validation</a>
+            </li>
+            <li>
+                <a href="https://github.com/pszczesniak" class="l-navbar__menu-item" title="My GitHub page"><img src="img/icons/git-white.svg" alt="github logo"></a>
+            </li>
+        </ul>
+    </nav>
+    <header class="l-header l-header--kapi-flex">
+        <a class="l-header__img l-header__img--kapi-flex" href="https://pszczesniak.github.io" title="Piotr Szczęśniak GitHub page">
+            <img src="img/icons/kapi-flex-grid-view.svg" alt="kapi-flex logo">
+        </a>
+        <h1 class="l-header__headline">KaPi-Flex</h1>
+        <h2 class="l-header__headline2">Complete css grid system based on flex.</h2>
+        <p class="l-header__buttons">
+            <a href="https://github.com/pszczesniak/kapi-flex" title="Get it now!">Get it now!</a>
+        </p>
+    </header>
+    <main>
+        <section class="section">
+            <div class="container">
+                <p>Written in <a href="http://sass-lang.com/" title="SCSS">SCSS</a> using <a href="https://css-tricks.com/bem-101/" title="BEM">BEM</a> methodology so you can easily customize it to your own needs. Works on IE10+ and on every other browser. You can use default RWD break points or change it to your favourite. You can customize gaps between columns, aligning cells, flex direction, justifying content etc.</p>
+                <p>Complete step by step tutorial how to use it is below.</p>
+                <hr>
+                <p>Main idea is based on simple inheritance - every element with class called <span class="mark">grid</span> should have children with class called <span class="mark">col-*</span>.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="headline-2">Most used example:</h2>
+                <div class="grid">
+                    <div class="col-xs-3" style="background-color: orange; padding: 1em;">col 1</div>
+                    <div class="col-xs-4" style="background-color: orange; padding: 1em;">col 2</div>
+                    <div class="col-xs-5" style="background-color: orange; padding: 1em;">col 3</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 4</div>
+                    <div class="col-xs-6" style="background-color: orange; padding: 1em;">col 5</div>
+                    <div class="col-xs-4" style="background-color: orange; padding: 1em;">col 6</div>
+                </div>
+<pre><code>&lt;div class="grid"&gt;
+    &lt;div class="col-xs-3"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs-4"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-5"&gt;col 3&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 4&lt;/div&gt;
+    &lt;div class="col-xs-6"&gt;col 5&lt;/div&gt;
+    &lt;div class="col-xs-4"&gt;col 6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="headline-2">Default column widths:</h2>
+                <p>Default grid is based on 12 columns layout, that means that to fill one row with columns sum of col-VALUE should be 12; for example: <span class="mark">col-xs-3 + col-xs-6 + col-xs-3 = 25% + 50% + 25% = 100%</span>. Do not worry about prefixes like <span class="mark">xs</span>, <span class="mark">md</span> etc. I'm going to explain it later when i will write about responsiveness. For now i can say that... you can easily change it in <span class="mark">kapi-flex/_config.scss</span> file.</p>
+                <div class="grid">
+                    <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 12</div>
+                    <div class="col-xs-1" style="background-color: orange; padding: 1em;">col 1</div>
+                    <div class="col-xs-11" style="background-color: orange; padding: 1em;">col 11</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 2</div>
+                    <div class="col-xs-10" style="background-color: orange; padding: 1em;">col 10</div>
+                    <div class="col-xs-3" style="background-color: orange; padding: 1em;">col 3</div>
+                    <div class="col-xs-9" style="background-color: orange; padding: 1em;">col 9</div>
+                    <div class="col-xs-4" style="background-color: orange; padding: 1em;">col 4</div>
+                    <div class="col-xs-8" style="background-color: orange; padding: 1em;">col 8</div>
+                    <div class="col-xs-5" style="background-color: orange; padding: 1em;">col 5</div>
+                    <div class="col-xs-7" style="background-color: orange; padding: 1em;">col 7</div>
+                    <div class="col-xs-6" style="background-color: orange; padding: 1em;">col 6</div>
+                    <div class="col-xs-6" style="background-color: orange; padding: 1em;">col 6</div>
+                    <div class="col-xs-7" style="background-color: orange; padding: 1em;">col 7</div>
+                    <div class="col-xs-5" style="background-color: orange; padding: 1em;">col 5</div>
+                    <div class="col-xs-8" style="background-color: orange; padding: 1em;">col 8</div>
+                    <div class="col-xs-4" style="background-color: orange; padding: 1em;">col 4</div>
+                    <div class="col-xs-9" style="background-color: orange; padding: 1em;">col 9</div>
+                    <div class="col-xs-3" style="background-color: orange; padding: 1em;">col 3</div>
+                    <div class="col-xs-10" style="background-color: orange; padding: 1em;">col 10</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 2</div>
+                    <div class="col-xs-11" style="background-color: orange; padding: 1em;">col 11</div>
+                    <div class="col-xs-1" style="background-color: orange; padding: 1em;">col 1</div>
+                </div>
+<pre><code>&lt;div class="grid"&gt;
+    &lt;div class="col-xs-12"&gt;col 12&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs-11"&gt;col 11&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-10"&gt;col 10&lt;/div&gt;
+    &lt;div class="col-xs-3"&gt;col 3&lt;/div&gt;
+    &lt;div class="col-xs-9"&gt;col 9&lt;/div&gt;
+    &lt;div class="col-xs-4"&gt;col 4&lt;/div&gt;
+    &lt;div class="col-xs-8"&gt;col 8&lt;/div&gt;
+    &lt;div class="col-xs-5"&gt;col 5&lt;/div&gt;
+    &lt;div class="col-xs-7"&gt;col 7&lt;/div&gt;
+    &lt;div class="col-xs-6"&gt;col 6&lt;/div&gt;
+    &lt;div class="col-xs-6"&gt;col 6&lt;/div&gt;
+    &lt;div class="col-xs-7"&gt;col 7&lt;/div&gt;
+    &lt;div class="col-xs-5"&gt;col 5&lt;/div&gt;
+    &lt;div class="col-xs-8"&gt;col 8&lt;/div&gt;
+    &lt;div class="col-xs-4"&gt;col 4&lt;/div&gt;
+    &lt;div class="col-xs-9"&gt;col 9&lt;/div&gt;
+    &lt;div class="col-xs-3"&gt;col 3&lt;/div&gt;
+    &lt;div class="col-xs-10"&gt;col 10&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-11"&gt;col 11&lt;/div&gt;
+    &lt;div class="col-xs-1"&gt;col 1&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="headline-2">Column offsets:</h2>
+                <div class="grid">
+                    <div class="col-xs-11 col-push-xs-1" style="background-color: orange; padding: 1em;">col 11</div>
+                    <div class="col-xs-10 col-push-xs-2" style="background-color: orange; padding: 1em;">col 10</div>
+                    <div class="col-xs-9 col-push-xs-3" style="background-color: orange; padding: 1em;">col 9</div>
+                    <div class="col-xs-8 col-push-xs-4" style="background-color: orange; padding: 1em;">col 8</div>
+                    <div class="col-xs-7 col-push-xs-5" style="background-color: orange; padding: 1em;">col 7</div>
+                    <div class="col-xs-6 col-push-xs-6" style="background-color: orange; padding: 1em;">col 6</div>
+                    <div class="col-xs-5 col-push-xs-7" style="background-color: orange; padding: 1em;">col 5</div>
+                    <div class="col-xs-4 col-push-xs-8" style="background-color: orange; padding: 1em;">col 4</div>
+                    <div class="col-xs-3 col-push-xs-9" style="background-color: orange; padding: 1em;">col 3</div>
+                    <div class="col-xs-2 col-push-xs-10" style="background-color: orange; padding: 1em;">col 2</div>
+                    <div class="col-xs-1 col-push-xs-11" style="background-color: orange; padding: 1em;">col 1</div>
+                </div>
+<pre><code>&lt;div class="grid"&gt;
+    &lt;div class="col-xs-11 col-push-xs-1"&gt;col 11&lt;/div&gt;
+    &lt;div class="col-xs-10 col-push-xs-2"&gt;col 10&lt;/div&gt;
+    &lt;div class="col-xs-9 col-push-xs-3"&gt;col 9&lt;/div&gt;
+    &lt;div class="col-xs-8 col-push-xs-4"&gt;col 8&lt;/div&gt;
+    &lt;div class="col-xs-7 col-push-xs-5"&gt;col 7&lt;/div&gt;
+    &lt;div class="col-xs-6 col-push-xs-6"&gt;col 6&lt;/div&gt;
+    &lt;div class="col-xs-5 col-push-xs-7"&gt;col 5&lt;/div&gt;
+    &lt;div class="col-xs-4 col-push-xs-8"&gt;col 4&lt;/div&gt;
+    &lt;div class="col-xs-3 col-push-xs-9"&gt;col 3&lt;/div&gt;
+    &lt;div class="col-xs-2 col-push-xs-10"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-1 col-push-xs-11"&gt;col 1&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="headline-2">Column offsets:</h2>
+                <div class="grid">
+                    <div class="col-xs-11 col-pull-xs-1" style="background-color: orange; padding: 1em;">col 11</div>
+                    <div class="col-xs-10 col-pull-xs-2" style="background-color: orange; padding: 1em;">col 10</div>
+                    <div class="col-xs-9 col-pull-xs-3" style="background-color: orange; padding: 1em;">col 9</div>
+                    <div class="col-xs-8 col-pull-xs-4" style="background-color: orange; padding: 1em;">col 8</div>
+                    <div class="col-xs-7 col-pull-xs-5" style="background-color: orange; padding: 1em;">col 7</div>
+                    <div class="col-xs-6 col-pull-xs-6" style="background-color: orange; padding: 1em;">col 6</div>
+                    <div class="col-xs-5 col-pull-xs-7" style="background-color: orange; padding: 1em;">col 5</div>
+                    <div class="col-xs-4 col-pull-xs-8" style="background-color: orange; padding: 1em;">col 4</div>
+                    <div class="col-xs-3 col-pull-xs-9" style="background-color: orange; padding: 1em;">col 3</div>
+                    <div class="col-xs-2 col-pull-xs-10" style="background-color: orange; padding: 1em;">col 2</div>
+                    <div class="col-xs-1 col-pull-xs-11" style="background-color: orange; padding: 1em;">col 1</div>
+                </div>
+<pre><code>&lt;div class="grid"&gt;
+    &lt;div class="col-xs-11 col-pull-xs-1"&gt;col 11&lt;/div&gt;
+    &lt;div class="col-xs-10 col-pull-xs-2"&gt;col 10&lt;/div&gt;
+    &lt;div class="col-xs-9 col-pull-xs-3"&gt;col 9&lt;/div&gt;
+    &lt;div class="col-xs-8 col-pull-xs-4"&gt;col 8&lt;/div&gt;
+    &lt;div class="col-xs-7 col-pull-xs-5"&gt;col 7&lt;/div&gt;
+    &lt;div class="col-xs-6 col-pull-xs-6"&gt;col 6&lt;/div&gt;
+    &lt;div class="col-xs-5 col-pull-xs-7"&gt;col 5&lt;/div&gt;
+    &lt;div class="col-xs-4 col-pull-xs-8"&gt;col 4&lt;/div&gt;
+    &lt;div class="col-xs-3 col-pull-xs-9"&gt;col 3&lt;/div&gt;
+    &lt;div class="col-xs-2 col-pull-xs-10"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-1 col-pull-xs-11"&gt;col 1&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="headline-2">Various offsets combination:</h2>
+                <div class="grid">
+                    <div class="col-xs-1 col-push-xs-2" style="background-color: orange; padding: 1em;">col 1</div>
+                    <div class="col-xs-2 col-pull-xs-2 col-push-xs-1" style="background-color: orange; padding: 1em;">col 2</div>
+                    <div class="col-xs-3 col-push-xs-1" style="background-color: orange; padding: 1em;">col 3</div>
+                </div>
+<pre><code>&lt;div class="grid"&gt;
+    &lt;div class="col-xs-1 col-push-xs-2"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs-2 col-pull-xs-2 col-push-xs-1"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-3 col-push-xs-1"&gt;col 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="headline-2">Auto-width columns</h2>
+                <p>Other way of using kapi-flex grid is to used columns width auto-width</p>
+                <div class="grid">
+                    <div class="col-xs" style="background-color: orange; padding: 1em;">col 1</div>
+                    <div class="col-xs" style="background-color: orange; padding: 1em;">col 2</div>
+                    <div class="col-xs" style="background-color: orange; padding: 1em;">col 3</div>
+                    <div class="col-xs" style="background-color: orange; padding: 1em;">col 4</div>
+                    <div class="col-xs" style="background-color: orange; padding: 1em;">col 5</div>
+                </div>
+                <div class="grid">
+                    <div class="col-xs" style="background-color: orange; padding: 1em;">col 1</div>
+                    <div class="col-xs" style="background-color: orange; padding: 1em;">col 2</div>
+                    <div class="col-xs" style="background-color: orange; padding: 1em;">col 3</div>
+                </div>
+<pre><code>&lt;div class="grid"&gt;
+    &lt;div class="col-xs"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs"&gt;col 3&lt;/div&gt;
+    &lt;div class="col-xs"&gt;col 4&lt;/div&gt;
+    &lt;div class="col-xs"&gt;col 5&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="grid"&gt;
+    &lt;div class="col-xs"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs"&gt;col 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="headline-2">Alignment</h2>
+                <p class="mark">Left (default)</p>
+                <div class="grid grid--xs-start">
+                    <div class="col-xs-4" style="background-color: orange; padding: 1em;">left</div>
+                </div>
+<pre><code>&lt;div class="grid grid--xs-start"&gt;
+    &lt;div class="col-xs-4"&gt;left&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <p class="mark">Center</p>
+                <div class="grid grid--xs-center">
+                    <div class="col-xs-4" style="background-color: orange; padding: 1em;">center</div>
+                </div>
+<pre><code>&lt;div class="grid grid--xs-center"&gt;
+    &lt;div class="col-xs-4"&gt;center&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <p class="mark">Right</p>
+                <div class="grid grid--xs-end">
+                    <div class="col-xs-4" style="background-color: orange; padding: 1em;">end</div>
+                </div>
+<pre><code>&lt;div class="grid grid--xs-end"&gt;
+    &lt;div class="col-xs-4"&gt;end&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <p class="mark">Top</p>
+                <div class="grid grid--xs-top">
+                    <div class="col-xs-4" style="background-color: orange; padding: 1em;">test<br>test<br>test<br>test<br>test</div>
+                    <div class="col-xs-4" style="background-color: orange; padding: 1em;">top</div>
+                </div>
+<pre><code>&lt;div class="grid grid--xs-top"&gt;
+    &lt;div class="col-xs-4"&gt;test&lt;br&gt;test&lt;br&gt;test&lt;br&gt;test&lt;br&gt;test&lt;/div&gt;
+    &lt;div class="col-xs-4"&gt;top&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <p class="mark">Middle</p>
+                <div class="grid grid--xs-middle">
+                    <div class="col-xs-4" style="background-color: orange; padding: 1em;">test<br>test<br>test<br>test<br>test</div>
+                    <div class="col-xs-4" style="background-color: orange; padding: 1em;">middle</div>
+                </div>
+<pre><code>&lt;div class="grid grid--xs-middle"&gt;
+    &lt;div class="col-xs-4"&gt;test&lt;br&gt;test&lt;br&gt;test&lt;br&gt;test&lt;br&gt;test&lt;/div&gt;
+    &lt;div class="col-xs-4"&gt;middle&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <p class="mark">Baseline</p>
+                <div class="grid grid--xs-baseline">
+                    <div class="col-xs-4" style="background-color: orange; padding: 3em 1em 1em 1em;">test<br>test<br>test<br>test<br>test</div>
+                    <div class="col-xs-4" style="background-color: orange; padding: 1em;">baseline</div>
+                </div>
+<pre><code>&lt;div class="grid grid--xs-baseline"&gt;
+    &lt;div class="col-xs-4"&gt;test&lt;br&gt;test&lt;br&gt;test&lt;br&gt;test&lt;br&gt;test&lt;/div&gt;
+    &lt;div class="col-xs-4"&gt;baseline&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <p class="mark">Bottom</p>
+                <div class="grid grid--xs-bottom">
+                    <div class="col-xs-4" style="background-color: orange; padding: 1em;">test<br>test<br>test<br>test<br>test</div>
+                    <div class="col-xs-4" style="background-color: orange; padding: 1em;">bottom</div>
+                </div>
+<pre><code>&lt;div class="grid grid--xs-bottom"&gt;
+    &lt;div class="col-xs-4"&gt;test&lt;br&gt;test&lt;br&gt;test&lt;br&gt;test&lt;br&gt;test&lt;/div&gt;
+    &lt;div class="col-xs-4"&gt;bottom&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <p>Default alignment is set to <span class="mark">stretch</span>.</p>
+
+                <hr>
+                <p>Aligment each column in different way.</p>
+                <div class="grid">
+                    <div class="col-xs-3" style="background-color: orange; padding: 1em;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam architecto aut, commodi deserunt dicta eligendi error incidunt inventore maiores mollitia officiis placeat quibusdam tempora unde veritatis vero voluptas.</div>
+                    <div class="col-xs-3 col-xs-bottom" style="background-color: orange; padding: 1em;">bottom</div>
+                    <div class="col-xs-3 col-xs-middle" style="background-color: orange; padding: 1em;">middle</div>
+                    <div class="col-xs-3 col-xs-top" style="background-color: orange; padding: 1em;">top</div>
+                </div>
+<pre><code>&lt;div class="grid"&gt;
+    &lt;div class="col-xs-3"&gt;...&lt;/div&gt;
+    &lt;div class="col-xs-3 col-xs-bottom"&gt;bottom&lt;/div&gt;
+    &lt;div class="col-xs-3 col-xs-middle"&gt;middle&lt;/div&gt;
+    &lt;div class="col-xs-3 col-xs-top"&gt;top&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="container">
+                <hr>
+                <h2 class="headline-2">Grid display options</h2>
+                <h3>Normal view</h3>
+                <div class="grid">
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 1</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 2</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 3</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 4</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 5</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 6</div>
+                </div>
+<pre><code>&lt;div class="grid"&gt;
+    &lt;div class="col-xs-2"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 3&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 4&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 5&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h3>Reverse view</h3>
+                <div class="grid grid--xs-reverse">
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 1</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 2</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 3</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 4</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 5</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 6</div>
+                </div>
+<pre><code>&lt;div class="grid grid--xs-reverse"&gt;
+    &lt;div class="col-xs-2"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 3&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 4&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 5&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h3>Normal view with ordering first/last</h3>
+                <div class="grid">
+                    <div class="col-xs-2 col-xs-last" style="background-color: orange; padding: 1em;">col 1 (last)</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 2</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 3</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 4</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 5</div>
+                    <div class="col-xs-2 col-xs-first" style="background-color: orange; padding: 1em;">col 6 (first)</div>
+                </div>
+<pre><code>&lt;div class="grid"&gt;
+    &lt;div class="col-xs-2 col-xs-last"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 3&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 4&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 5&lt;/div&gt;
+    &lt;div class="col-xs-2 col-xs-first"&gt;col 6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            </div>
+
+            <h3>Normal view (full device width)</h3>
+            <div class="grid">
+                <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 1</div>
+                <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 2</div>
+                <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 3</div>
+                <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 4</div>
+                <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 5</div>
+                <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 6</div>
+            </div>
+<pre><code>&lt;div class="grid"&gt;
+    &lt;div class="col-xs-2"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 3&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 4&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 5&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Side gaps (full device width)</h3>
+            <div class="grid grid--xs-side-gaps">
+                <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 1</div>
+                <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 2</div>
+                <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 3</div>
+                <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 4</div>
+                <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 5</div>
+                <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 6</div>
+            </div>
+<pre><code>&lt;div class="grid grid--xs-side-gaps"&gt;
+    &lt;div class="col-xs-2"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 3&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 4&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 5&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <div class="container">
+                <h3>Space between columns</h3>
+                <div class="grid grid--xs-between">
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 1</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 2</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 3</div>
+                </div>
+<pre><code>&lt;div class="grid grid--xs-between"&gt;
+    &lt;div class="col-xs-2"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h3>Space around columns</h3>
+                <div class="grid grid--xs-around">
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 1</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 2</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 3</div>
+                </div>
+<pre><code>&lt;div class="grid grid--xs-around"&gt;
+    &lt;div class="col-xs-2"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+
+                <h3>Spacer between columns</h3>
+
+                <div class="grid">
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 1</div>
+                    <div class="col-xs-spacer"></div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 2</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 3</div>
+                </div>
+<pre><code>&lt;div class="grid"&gt;
+    &lt;div class="col-xs-2"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs-spacer"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h3>Grid with gaps that are equal 20px</h3>
+                <div class="grid grid--20">
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 1</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 2</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 3</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 4</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 5</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em;">col 6</div>
+                </div>
+<pre><code>&lt;div class="grid grid--20"&gt;
+    &lt;div class="col-xs-2"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 3&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 4&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 5&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h3>Grid with no gaps</h3>
+                <div class="grid grid--0">
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em; border: 1px solid #444;">col 1</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em; border: 1px solid #444;">col 2</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em; border: 1px solid #444;">col 3</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em; border: 1px solid #444;">col 4</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em; border: 1px solid #444;">col 5</div>
+                    <div class="col-xs-2" style="background-color: orange; padding: 1em; border: 1px solid #444;">col 6</div>
+                </div>
+<pre><code>&lt;div class="grid grid--0"&gt;
+    &lt;div class="col-xs-2"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 3&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 4&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 5&lt;/div&gt;
+    &lt;div class="col-xs-2"&gt;col 6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+
+                <h3>Nestes grids</h3>
+                <div class="grid grid--20 nested-colors">
+                    <div class="col-xs-3">1</div>
+                    <div class="col-xs-3">2</div>
+                    <div class="col-xs-3">3</div>
+                    <div class="col-xs-3">4</div>
+                    <div class="col-xs-6">
+
+                        <div class="grid">
+                            <div class="col-xs-3">1</div>
+                            <div class="col-xs-3">2</div>
+                            <div class="col-xs-3">3</div>
+                            <div class="col-xs-3">4</div>
+                            <div class="col-xs-6">
+                            
+                                <div class="grid">
+                                    <div class="col-xs-3">1</div>
+                                    <div class="col-xs-3">2</div>
+                                    <div class="col-xs-3">3</div>
+                                    <div class="col-xs-3">4</div>
+                                    <div class="col-xs-3">5</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<pre><code>&lt;div class="grid nested-colors"&gt;
+    &lt;div class="col-xs-3"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-3"&gt;2&lt;/div&gt;
+    &lt;div class="col-xs-3"&gt;3&lt;/div&gt;
+    &lt;div class="col-xs-3"&gt;4&lt;/div&gt;
+    &lt;div class="col-xs-6"&gt;
+        &lt;div class="grid"&gt;
+            &lt;div class="col-xs-3"&gt;1&lt;/div&gt;
+            &lt;div class="col-xs-3"&gt;2&lt;/div&gt;
+            &lt;div class="col-xs-3"&gt;3&lt;/div&gt;
+            &lt;div class="col-xs-3"&gt;4&lt;/div&gt;
+            &lt;div class="col-xs-6"&gt;
+                &lt;div class="grid"&gt;
+                    &lt;div class="col-xs-3"&gt;1&lt;/div&gt;
+                    &lt;div class="col-xs-3"&gt;2&lt;/div&gt;
+                    &lt;div class="col-xs-3"&gt;3&lt;/div&gt;
+                    &lt;div class="col-xs-3"&gt;4&lt;/div&gt;
+                    &lt;div class="col-xs-3"&gt;5&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            </div>
+
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="headline-2">Documentation</h2>
+                <p>All grid css classess:</p>
+<pre><code>.grid
+     --xs
+     --sm
+     --md
+     --lg
+     --xl
+         -top
+         -middle
+         -bottom
+         -center
+         -baseline
+         -reverse
+         -end
+         -start
+         -around
+         -between
+         -side-gaps
+    Examples of class names: grid, grid--xs-top, grid--lg-reverse.
+
+    (resposive prefixes are optional)
+    --top
+    --middle
+    --bottom
+    --center
+    --baseline
+    --reverse
+    --end
+    --start
+    --around
+    --between
+    --side-gaps
+    --(0, 10, 20, 30) - gaps in pixels
+
+    Examples of class names: grid, grid--top, grid--reverse, grid--20.
+
+</code></pre>
+
+                <p>All column css classess:</p>
+<pre><code>.col
+    -xs
+    -sm
+    -md
+    -lg
+    -xl
+       -top
+       -middle
+       -bottom
+       -center
+       -baseline
+       -first
+       -last
+       -spacer
+       -(1 - 12)
+
+       Examples of class names: col-xs, col-sm-middle, col-md-3.
+
+.col-push,
+.col-pull
+         -xs
+         -sm
+         -md
+         -lg
+         -xl
+            -(1 - 12)
+
+            Examples of class names: col-push-xs-3, col-sm-pull-5.
+    </code></pre>
+
+                <h3>Media queries prefixes</h3>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Prefix</th>
+                            <th>Value</th>
+                            <th>CSS media query</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><b>xs</b></td>
+                            <td>200px</td>
+                            <td><pre><code>@media screen and (min-width: 200px)</code></pre></td>
+                        </tr>
+                        <tr>
+                            <td><b>sm</b></td>
+                            <td>769px</td>
+                            <td><pre><code>@media screen and (min-width: 769px)</code></pre></td>
+                        </tr>
+                        <tr>
+                            <td><b>md</b></td>
+                            <td>1025px</td>
+                            <td><pre><code>@media screen and (min-width: 1025px)</code></pre></td>
+                        </tr>
+                        <tr>
+                            <td><b>lg</b></td>
+                            <td>1365px</td>
+                            <td><pre><code>@media screen and (min-width: 1365px)</code></pre></td>
+                        </tr>
+                        <tr>
+                            <td><b>xl</b></td>
+                            <td>1520px</td>
+                            <td><pre><code>@media screen and (min-width: 1520px)</code></pre></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                
+            </div>
+        </section>
+
+    </main>
+    <footer class="l-footer">
+        <div class="container">
+            <p class="text-center">Hosted on GitHub Pages - Made with ♥</p>
+        </div>
+    </footer>
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>
