@@ -13,22 +13,28 @@ body {
     justify-content: flex-start;
     width: calc(100% + #{$marginGap});
 
-    &--side-gaps {
-        width: calc(100% - #{$marginGap} );
-        margin: 0 auto;
-    }
-
-
-    /*.grid {
-        width: calc(100% + #{$marginGap});
-    }*/
-
-    &__cell {
+    > [class*="col-"] {
         margin: 0 ($marginGap/2) $marginGap ($marginGap/2);
     }
 
     &__spacer {
         flex-grow: 1;
+    }
+
+    &--top {
+        align-items: flex-start;
+    }
+
+    &--middle {
+        align-items: center;
+    }
+
+    &--baseline {
+        align-items: baseline;
+    }
+
+    &--bottom {
+        align-items: flex-end;
     }
 
     &--reverse {
@@ -43,12 +49,25 @@ body {
         justify-content: center;
     }
 
-    &--right {
+    &--end {
         justify-content: flex-end;
     }
 
     &--start {
         align-items: flex-start;
+    }
+
+    &--around {
+        justify-content: space-around;
+    }
+
+    &--between {
+        justify-content: space-between;
+    }
+
+    &--side-gaps {
+        width: calc(100% - #{$marginGap} );
+        margin: 0 auto;
     }
 
     @each $gap in $column_gap {
@@ -65,30 +84,30 @@ body {
                 margin: 0 auto;
             }
 
-            .grid {
+            > .grid {
                 width: calc(100% + #{$gappx});
                 margin: 0 -$gappx_half;
             }
 
             justify-content: space-between;
 
-            .grid__cell {
+            > [class*="col-"] {
                 margin: 0 $gappx_half #{$gappx} $gappx_half;
             }
 
             @each $name, $bp_size in $breakpoints_names {
-                @media (min-width:  $bp_size) {
+                @media screen and (min-width:  $bp_size) {
                     @each $number in $columns_numbers {
                         $calculatedWidth: percentage($number/12);
 
                         @if $number == 12 {
-                            .col-#{$name}-12 {
+                            > .col-#{$name}-12 {
                                 max-width: 100%;
                                 flex-basis: 100%;
                                 width: 100%;
                             }
                         } @else {
-                            .col-#{$name}-#{$number} {
+                            > .col-#{$name}-#{$number} {
                                 max-width: calc( #{$calculatedWidth} - #{$gappx});
                                 flex-basis: calc( #{$calculatedWidth} - #{$gappx});
                                 width: calc( #{$calculatedWidth} - #{$gappx});
@@ -102,7 +121,7 @@ body {
 }
 
 @each $name, $bp_size in $breakpoints_names {
-    @media (min-width:  $bp_size) {
+    @media screen and (min-width:  $bp_size) {
         @each $number in $columns_numbers {
             $calculatedWidth: percentage($number/12);
 
@@ -118,6 +137,14 @@ body {
                     flex-basis: calc( #{$calculatedWidth} - #{$marginGap});
                     width: calc( #{$calculatedWidth} - #{$marginGap});
                 }
+
+                .grid .col-push-#{$name}-#{$number} {
+                    margin-left: calc(#{$calculatedWidth} + #{$marginGap}/2);
+                }
+
+                .grid .col-pull-#{$name}-#{$number} {
+                    margin-right: calc(#{$calculatedWidth} + #{$marginGap}/2);
+                }
             }
         }
 
@@ -125,6 +152,34 @@ body {
             flex-basis: 0;
             flex-grow: 1;
             max-width: 100%;
+        }
+
+        .col-#{$name}-top {
+            align-self: flex-start;
+        }
+
+        .col-#{$name}-middle {
+            align-self: center;
+        }
+
+        .col-#{$name}-baseline {
+            align-self: baseline;
+        }
+
+        .col-#{$name}-bottom {
+            align-self: flex-end;
+        }
+
+        .col-#{$name}-first {
+            order: -1;
+        }
+
+        .col-#{$name}-last {
+            order: 1;
+        }
+        
+        .col-#{$name}-spacer {
+            flex-grow: 1;
         }
 
         .grid--#{$name}-top {
@@ -135,9 +190,75 @@ body {
             align-items: center;
         }
 
+        .grid--#{$name}-baseline {
+            align-items: baseline;
+        }
+
         .grid--#{$name}-bottom {
             align-items: flex-end;
         }
 
+        .grid--#{$name}-reverse {
+            flex-direction: row-reverse;
+
+            &.grid--column {
+                flex-direction: column-reverse;
+            }
+        }
+
+        .grid--#{$name}-center {
+            justify-content: center;
+        }
+
+        .grid--#{$name}-end {
+            justify-content: flex-end;
+        }
+
+        .grid--#{$name}-start {
+            align-items: flex-start;
+        }
+
+        .grid--#{$name}-around {
+            justify-content: space-around;
+        }
+
+        .grid--#{$name}-between {
+            justify-content: space-between;
+        }
+
+        .grid--#{$name}-side-gaps {
+            width: calc(100% - #{$marginGap} );
+            margin: 0 auto;
+        }
+    }
+}
+
+.col {
+    &-top {
+        align-self: flex-start;
+    }
+
+    &-middle {
+        align-self: center;
+    }
+
+    &-baseline {
+        align-self: baseline;
+    }
+
+    &-bottom {
+        align-self: flex-end;
+    }
+
+    &-first {
+        order: -1;
+    }
+
+    &-last {
+        order: 1;
+    }
+    
+    &-spacer {
+        flex-grow: 1;
     }
 }
