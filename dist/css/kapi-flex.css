@@ -14,6 +14,15 @@ body {
     margin: 0 5px 10px 5px; }
   .grid__spacer {
     flex-grow: 1; }
+  .grid--column {
+    flex-direction: column;
+    flex-flow: wrap column;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+    .grid--column > [class*="col-"] {
+      margin-left: 0;
+      margin-right: 0; }
   .grid--top {
     align-items: flex-start; }
   .grid--middle {
@@ -946,7 +955,16 @@ body {
     justify-content: space-between; }
   .grid--xs-side-gaps {
     width: calc(100% - 10px);
-    margin: 0 auto; } }
+    margin: 0 auto; }
+  .grid--xs-column {
+    flex-direction: column;
+    flex-flow: wrap column;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+    .grid--xs-column > [class*="col-"] {
+      margin-left: 0;
+      margin-right: 0; } }
 
 @media screen and (min-width: 769px) {
   .col-sm-1 {
@@ -1083,7 +1101,16 @@ body {
     justify-content: space-between; }
   .grid--sm-side-gaps {
     width: calc(100% - 10px);
-    margin: 0 auto; } }
+    margin: 0 auto; }
+  .grid--sm-column {
+    flex-direction: column;
+    flex-flow: wrap column;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+    .grid--sm-column > [class*="col-"] {
+      margin-left: 0;
+      margin-right: 0; } }
 
 @media screen and (min-width: 1025px) {
   .col-md-1 {
@@ -1220,7 +1247,16 @@ body {
     justify-content: space-between; }
   .grid--md-side-gaps {
     width: calc(100% - 10px);
-    margin: 0 auto; } }
+    margin: 0 auto; }
+  .grid--md-column {
+    flex-direction: column;
+    flex-flow: wrap column;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+    .grid--md-column > [class*="col-"] {
+      margin-left: 0;
+      margin-right: 0; } }
 
 @media screen and (min-width: 1365px) {
   .col-lg-1 {
@@ -1357,7 +1393,16 @@ body {
     justify-content: space-between; }
   .grid--lg-side-gaps {
     width: calc(100% - 10px);
-    margin: 0 auto; } }
+    margin: 0 auto; }
+  .grid--lg-column {
+    flex-direction: column;
+    flex-flow: wrap column;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+    .grid--lg-column > [class*="col-"] {
+      margin-left: 0;
+      margin-right: 0; } }
 
 @media screen and (min-width: 1520px) {
   .col-xl-1 {
@@ -1494,7 +1539,16 @@ body {
     justify-content: space-between; }
   .grid--xl-side-gaps {
     width: calc(100% - 10px);
-    margin: 0 auto; } }
+    margin: 0 auto; }
+  .grid--xl-column {
+    flex-direction: column;
+    flex-flow: wrap column;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+    .grid--xl-column > [class*="col-"] {
+      margin-left: 0;
+      margin-right: 0; } }
 
 .col-top {
   align-self: flex-start; }

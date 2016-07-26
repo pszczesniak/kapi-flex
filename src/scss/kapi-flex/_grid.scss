@@ -21,6 +21,19 @@ body {
         flex-grow: 1;
     }
 
+    &--column {
+        flex-direction: column;
+        flex-flow: wrap column;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+
+        > [class*="col-"] {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
     &--top {
         align-items: flex-start;
     }
@@ -106,6 +119,7 @@ body {
                                 flex-basis: 100%;
                                 width: 100%;
                             }
+
                         } @else {
                             > .col-#{$name}-#{$number} {
                                 max-width: calc( #{$calculatedWidth} - #{$gappx});
@@ -131,6 +145,7 @@ body {
                     flex-basis: 100%;
                     width: 100%;
                 }
+                
             } @else {
                 .col-#{$name}-#{$number} {
                     max-width: calc( #{$calculatedWidth} - #{$marginGap});
@@ -229,6 +244,19 @@ body {
         .grid--#{$name}-side-gaps {
             width: calc(100% - #{$marginGap} );
             margin: 0 auto;
+        }
+        
+        .grid--#{$name}-column {
+            flex-direction: column;
+            flex-flow: wrap column;
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+
+            > [class*="col-"] {
+                margin-left: 0;
+                margin-right: 0;
+            }
         }
     }
 }
