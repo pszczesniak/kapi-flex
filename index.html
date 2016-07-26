@@ -609,7 +609,137 @@
 &lt;/div&gt;</code></pre>
 
             </div>
+        </section>
 
+        <section class="section">
+            <div class="container">
+                <h2 class="headline-2">Column layout</h2>
+                <h3>Normal view</h3>
+                <div class="grid grid--column">
+                    <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 1</div>
+                    <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 2</div>
+                    <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 3</div>
+                    <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 4</div>
+                    <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 5</div>
+                    <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 6</div>
+                </div>
+<pre><code>&lt;div class="grid grid--column"&gt;
+    &lt;div class="col-xs-12"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 3&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 4&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 5&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h3>Reverse view</h3>
+                <div class="grid grid--column grid--xs-reverse">
+                    <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 1</div>
+                    <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 2</div>
+                    <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 3</div>
+                    <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 4</div>
+                    <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 5</div>
+                    <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 6</div>
+                </div>
+<pre><code>&lt;div class="grid grid--column grid--xs-reverse"&gt;
+    &lt;div class="col-xs-12"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 3&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 4&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 5&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h3>Normal view with ordering first/last</h3>
+                <div class="grid grid--column">
+                    <div class="col-xs-12 col-xs-last" style="background-color: orange; padding: 1em;">col 1 (last)</div>
+                    <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 2</div>
+                    <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 3</div>
+                    <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 4</div>
+                    <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 5</div>
+                    <div class="col-xs-12 col-xs-first" style="background-color: orange; padding: 1em;">col 6 (first)</div>
+                </div>
+<pre><code>&lt;div class="grid grid--column"&gt;
+    &lt;div class="col-xs-12 col-xs-last"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 3&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 4&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 5&lt;/div&gt;
+    &lt;div class="col-xs-12 col-xs-first"&gt;col 6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            </div>
+
+            <h3>Normal view (full device width)</h3>
+            <div class="grid grid--column">
+                <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 1</div>
+                <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 2</div>
+                <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 3</div>
+                <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 4</div>
+                <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 5</div>
+                <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 6</div>
+            </div>
+<pre><code>&lt;div class="grid grid--column"&gt;
+    &lt;div class="col-xs-12"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 3&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 4&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 5&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3>Side gaps (full device width)</h3>
+            <div class="grid grid--column grid--xs-side-gaps">
+                <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 1</div>
+                <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 2</div>
+                <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 3</div>
+                <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 4</div>
+                <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 5</div>
+                <div class="col-xs-12" style="background-color: orange; padding: 1em;">col 6</div>
+            </div>
+<pre><code>&lt;div class="grid grid--column grid--xs-side-gaps"&gt;
+    &lt;div class="col-xs-12"&gt;col 1&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 2&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 3&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 4&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 5&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;col 6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+        <div class="container">
+            <h3>Example with nested grid (default row)</h3>
+            <div class="grid grid--column nested-colors">
+                <div class="col-xs-12">1</div>
+                <div class="col-xs-12">2</div>
+                <div class="col-xs-12">3</div>
+                <div class="col-xs-12">4</div>
+                <div class="col-xs-12">
+
+                    <div class="grid">
+                        <div class="col-xs-3">1</div>
+                        <div class="col-xs-3">2</div>
+                        <div class="col-xs-3">3</div>
+                        <div class="col-xs-3">4</div>
+                    </div>
+                </div>
+            </div>
+<pre><code>&lt;div class="grid grid--column"&gt;
+    &lt;div class="col-xs-12"&gt;1&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;2&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;3&lt;/div&gt;
+    &lt;div class="col-xs-12"&gt;4&lt;/div&gt;
+    &lt;div class="col-xs-6"&gt;
+        &lt;div class="grid"&gt;
+            &lt;div class="col-xs-3"&gt;1&lt;/div&gt;
+            &lt;div class="col-xs-3"&gt;2&lt;/div&gt;
+            &lt;div class="col-xs-3"&gt;3&lt;/div&gt;
+            &lt;div class="col-xs-3"&gt;4&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+
+            </div>
         </section>
 
         <section class="section">
@@ -622,6 +752,7 @@
      --md
      --lg
      --xl
+         -column
          -top
          -middle
          -bottom
@@ -636,6 +767,7 @@
     Examples of class names: grid, grid--xs-top, grid--lg-reverse.
 
     (resposive prefixes are optional)
+    --column
     --top
     --middle
     --bottom
@@ -738,6 +870,8 @@
             <p class="text-center">Hosted on GitHub Pages - Made with ♥</p>
         </div>
     </footer>
+    <script src="js/main.min.js"></script>
+
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
