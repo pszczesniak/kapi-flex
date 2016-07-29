@@ -15,6 +15,9 @@ Downlod repository and run `npm install` and after that type `grunt` and hit ent
 If you just want to use it without customization - get css file from `dist/css` and... that's all :)
 
 ### Fully responsive
+
+![KaPi-flex responsive live example](http://piotr-szczesniak.kapisoft.pl/images/flex-grid-rwd.gif)
+
 Default breakpoints:
 
 Prefix | Value | Css media query
@@ -52,6 +55,7 @@ $column_gap: (0, 20, 30);
 </div>
 ```
 
+CSS grid class tree:
 ```css
 .grid
      --xs
@@ -91,8 +95,7 @@ $column_gap: (0, 20, 30);
     Examples of class names: grid, grid--top, grid--reverse, grid--20.
 ```
 
-CSS class tree:
-
+CSS column class tree:
 ```css
 .col
     -xs
