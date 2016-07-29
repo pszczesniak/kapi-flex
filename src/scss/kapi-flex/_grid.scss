@@ -1,10 +1,3 @@
-
-body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
 .grid {
     display: flex;
     flex-flow: wrap row;
@@ -110,16 +103,15 @@ body {
 
             @each $name, $bp_size in $breakpoints_names {
                 @media screen and (min-width:  $bp_size) {
-                    @each $number in $columns_numbers {
-                        $calculatedWidth: percentage($number/12);
+                    @for $number from 1 through $grid-column-count {
+                        $calculatedWidth: percentage($number/$grid-column-count);
 
-                        @if $number == 12 {
-                            > .col-#{$name}-12 {
+                        @if ($number == $grid-column-count) {
+                            > .col-#{$name}-#{$number} {
                                 max-width: 100%;
                                 flex-basis: 100%;
                                 width: 100%;
                             }
-
                         } @else {
                             > .col-#{$name}-#{$number} {
                                 max-width: calc( #{$calculatedWidth} - #{$gappx});
@@ -136,16 +128,15 @@ body {
 
 @each $name, $bp_size in $breakpoints_names {
     @media screen and (min-width:  $bp_size) {
-        @each $number in $columns_numbers {
-            $calculatedWidth: percentage($number/12);
+        @for $number from 1 through $grid-column-count {
+            $calculatedWidth: percentage($number/$grid-column-count);
 
-            @if ($number == 12) {
-                .col-#{$name}-12 {
+            @if ($number == $grid-column-count) {
+                .col-#{$name}-#{$number} {
                     max-width: 100%;
                     flex-basis: 100%;
                     width: 100%;
                 }
-                
             } @else {
                 .col-#{$name}-#{$number} {
                     max-width: calc( #{$calculatedWidth} - #{$marginGap});
@@ -288,5 +279,9 @@ body {
     
     &-spacer {
         flex-grow: 1;
+    }
+
+    &-grid[class*="col-"] {
+        margin-bottom: 0;
     }
 }
