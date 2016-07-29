@@ -88,7 +88,7 @@ body {
         $gappx_double: #{$gap * 1.5}px;
         $gappx_half: #{$gap / 2}px;
 
-        &--#{$gap;} {
+        &--#{$gap} {
             margin: 0 -$gappx_half;
             width: calc(100% + #{$gappx});
 
