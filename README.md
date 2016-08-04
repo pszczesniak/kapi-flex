@@ -9,6 +9,11 @@ Written in [SCSS](http://sass-lang.com/) using [BEM](https://css-tricks.com/bem-
 
 ## Instalation
 
+### bower
+```
+bower install flexboxgrid
+```
+
 Project is using `grunt` so it needs `Node.js`.
 Downlod repository and run `npm install` and after that type `grunt` and hit enter; If you want to build project (minified CSS) - type `grunt build`. Css files can be found in `/dist/css` folder.
 
