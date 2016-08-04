@@ -1,0 +1,28 @@
+{
+  "name": "Piotr Szczęśniak",
+  "version": "1.0.0",
+  "homepage": "https://github.com/pszczesniak/kapi-flex",
+  "authors": [
+    "Piotr Szczęśniak <szczesniakp@o2.pl>"
+  ],
+  "description": "Complete css grid system based on flex.",
+  "main": [
+    "dist/css/kapi-flex.css",
+    "dist/css/kapi-flex.min.css"
+  ],
+  "keywords": [
+    "grid",
+    "flexbox",
+    "sass",
+    "scss",
+    "flex"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
