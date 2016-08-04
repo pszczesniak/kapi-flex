@@ -11,7 +11,7 @@ Written in [SCSS](http://sass-lang.com/) using [BEM](https://css-tricks.com/bem-
 
 ### bower
 ```
-bower install flexboxgrid
+bower install kapi-flex
 ```
 
 Project is using `grunt` so it needs `Node.js`.
