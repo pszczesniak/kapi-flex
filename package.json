@@ -9,7 +9,7 @@
     "url": "git@github.com:pszczesniak/kapi-flex.git"
   },
   "devDependencies": {
-    "grunt": "^1.3.0",
+    "grunt": "^1.5.2",
     "grunt-combine-media-queries": "^1.0.20",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-contrib-cssmin": "^4.0.0",
